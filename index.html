@@ -40,7 +40,25 @@
       }
     </style>
     <script>
-      document.addEventListener("MemberSpace.ready", function () {
+      var MemberSpace = window.MemberSpace || {
+        subdomain: "github10",
+      };
+      (function (d) {
+        var s = d.createElement("script");
+        s.src = "https://cdn.memberspace.com/scripts/widgets.js";
+        var e = d.getElementsByTagName("script")[0];
+        e.parentNode.insertBefore(s, e);
+      })(document);
+
+      if (MemberSpace.ready) {
+        initialise();
+      } else {
+        document.addEventListener("MemberSpace.ready", function () {
+          initialise();
+        });
+      }
+
+      function initialise() {
         const data = MemberSpace.getMemberInfo();
         console.log("MemberSpace data:", data);
         if (data.isLoggedIn) {
@@ -54,22 +72,10 @@
             JSON.stringify({ event: "loggedOut" })
           );
         }
-      });
-      var MemberSpace = window.MemberSpace || {
-        subdomain: "github10",
-        useOverlay: false,
-      };
-      (function (d) {
-        var s = d.createElement("script");
-        s.src = "https://cdn.memberspace.com/scripts/widgets.js";
-        var e = d.getElementsByTagName("script")[0];
-        e.parentNode.insertBefore(s, e);
-      })(document);
+      }
     </script>
   </head>
   <body>
-    <h1>Trivia Game Login</h1>
-    <!-- MemberSpace will automatically insert login/signup forms here if configured -->
     <div id="memberspace-login"></div>
   </body>
 </html>

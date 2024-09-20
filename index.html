@@ -89,6 +89,16 @@
         "MemberSpace.member.registration",
         handleMemberRegistration
       );
+      const handleConversion = ({ detail }) => {
+        const { order, membership, member } = detail;
+
+        const data = MemberSpace.getMemberInfo();
+        window.MemberSpaceChannel.postMessage(
+          JSON.stringify({ event: "conversion", data: data.memberInfo })
+        );
+      };
+
+      document.addEventListener("MemberSpace.conversion", handleConversion);
     </script>
   </head>
   <body>

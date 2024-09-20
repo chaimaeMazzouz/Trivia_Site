@@ -5,19 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Trivia Game Login</title>
     <!-- MemberSpace script -->
-    <style>
-      /* Hide the modal overlay */
-      .ms-portal-overlay,
-      .ms-portal-container {
-        display: none !important;
-      }
-
-      /* Make sure the modal is not visible */
-      .MemberSpaceWidgetInternal__Modal__xIsfc__modal {
-        display: none !important;
-      }
-    </style>
-
     <script>
       var MemberSpace = window.MemberSpace || {
         subdomain: "github10",
@@ -29,6 +16,21 @@
         var e = d.getElementsByTagName("script")[0];
         e.parentNode.insertBefore(s, e);
       })(document);
+
+      document.addEventListener("DOMContentLoaded", function () {
+        // Select the backdrop element
+        const backdrop = document.querySelector(
+          ".MemberSpaceWidgetInternal__Backdrop__z1C6X__backdrop"
+        );
+
+        // Prevent the modal from closing when clicking on the backdrop
+        if (backdrop) {
+          backdrop.addEventListener("click", function (event) {
+            // Stop the event propagation (this prevents the modal from closing)
+            event.stopPropagation();
+          });
+        }
+      });
     </script>
   </head>
   <body>

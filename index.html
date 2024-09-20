@@ -40,6 +40,21 @@
       }
     </style>
     <script>
+      document.addEventListener("MemberSpace.ready", function () {
+        const data = MemberSpace.getMemberInfo();
+        console.log("MemberSpace data:", data);
+        if (data.isLoggedIn) {
+          console.log("user logged in ");
+          window.MemberSpaceChannel.postMessage(
+            JSON.stringify({ event: "loggedIn", data: data.memberInfo })
+          );
+        } else {
+          console.log("Oppps FAILED");
+          window.MemberSpaceChannel.postMessage(
+            JSON.stringify({ event: "loggedOut" })
+          );
+        }
+      });
       var MemberSpace = window.MemberSpace || {
         subdomain: "github10",
         useOverlay: false,

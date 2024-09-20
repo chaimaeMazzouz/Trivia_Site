@@ -73,6 +73,22 @@
           );
         }
       }
+
+      const handleMemberRegistration = ({ detail }) => {
+        const { memberInfo } = detail;
+
+        window.MemberSpaceChannel.postMessage(
+          JSON.stringify({
+            event: "registerd",
+            data: memberInfo,
+          })
+        );
+        console.log(memberInfo.email);
+      };
+      document.addEventListener(
+        "MemberSpace.member.registration",
+        handleMemberRegistration
+      );
     </script>
   </head>
   <body>

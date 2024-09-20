@@ -18,27 +18,38 @@
       })(document);
 
       document.addEventListener("DOMContentLoaded", function () {
-        // Select the backdrop element
+        // Select the modal container and the backdrop element
+        const modal = document.querySelector(
+          ".MemberSpaceWidgetInternal__Modal__xIsfc__modal"
+        );
         const backdrop = document.querySelector(
           ".MemberSpaceWidgetInternal__Backdrop__z1C6X__backdrop"
         );
 
-        // Ensure the modal remains open and prevents closing on backdrop click
+        // Prevent modal closing on backdrop click
         if (backdrop) {
           backdrop.addEventListener("click", function (event) {
-            // Prevent the default action when the backdrop is clicked
-            event.preventDefault();
+            // This prevents the backdrop from closing the modal
+            event.stopPropagation();
           });
         }
 
-        // Allow the modal to close via the close button inside the modal
+        // Ensure the modal still functions and is interactable
+        if (modal) {
+          modal.addEventListener("click", function (event) {
+            // Allow clicks inside the modal to propagate (so it remains functional)
+            event.stopPropagation();
+          });
+        }
+
+        // Handle closing the modal via the close button
         const closeButton = document.querySelector(
           ".MemberSpaceWidgetInternal__Modal__xIsfc__closeButton"
         );
         if (closeButton) {
           closeButton.addEventListener("click", function () {
-            // You can handle the modal closing logic here if needed
-            // This will allow the close button to function properly
+            // Close modal logic goes here, if needed
+            modal.style.display = "none"; // Or trigger any modal close action
           });
         }
       });

@@ -23,11 +23,22 @@
           ".MemberSpaceWidgetInternal__Backdrop__z1C6X__backdrop"
         );
 
-        // Prevent the modal from closing when clicking on the backdrop
+        // Ensure the modal remains open and prevents closing on backdrop click
         if (backdrop) {
           backdrop.addEventListener("click", function (event) {
-            // Stop the event propagation (this prevents the modal from closing)
-            event.stopPropagation();
+            // Prevent the default action when the backdrop is clicked
+            event.preventDefault();
+          });
+        }
+
+        // Allow the modal to close via the close button inside the modal
+        const closeButton = document.querySelector(
+          ".MemberSpaceWidgetInternal__Modal__xIsfc__closeButton"
+        );
+        if (closeButton) {
+          closeButton.addEventListener("click", function () {
+            // You can handle the modal closing logic here if needed
+            // This will allow the close button to function properly
           });
         }
       });

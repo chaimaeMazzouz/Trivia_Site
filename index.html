@@ -5,6 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Trivia Game Login</title>
     <!-- MemberSpace script -->
+    <style>
+      .MemberSpaceWidgetInternal__Modal__xIsfc__modal {
+        position: fixed !important;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        margin: 0 !important;
+        max-width: none !important;
+        max-height: none !important;
+        border-radius: 0 !important;
+        box-shadow: none !important;
+        background-color: var(
+          --modal-backgroundColor
+        ); /* Keep the modal background color */
+        z-index: 9999;
+      }
+
+      .MemberSpaceWidgetInternal__Modal__xIsfc__innerScrollContainer {
+        max-height: 100vh;
+        overflow-y: auto;
+      }
+    </style>
     <script>
       var MemberSpace = window.MemberSpace || {
         subdomain: "github10",
@@ -16,43 +39,6 @@
         var e = d.getElementsByTagName("script")[0];
         e.parentNode.insertBefore(s, e);
       })(document);
-
-      document.addEventListener("DOMContentLoaded", function () {
-        // Select the modal container and the backdrop element
-        const modal = document.querySelector(
-          ".MemberSpaceWidgetInternal__Modal__xIsfc__modal"
-        );
-        const backdrop = document.querySelector(
-          ".MemberSpaceWidgetInternal__Backdrop__z1C6X__backdrop"
-        );
-
-        // Prevent modal closing on backdrop click
-        if (backdrop) {
-          backdrop.addEventListener("click", function (event) {
-            // This prevents the backdrop from closing the modal
-            event.stopPropagation();
-          });
-        }
-
-        // Ensure the modal still functions and is interactable
-        if (modal) {
-          modal.addEventListener("click", function (event) {
-            // Allow clicks inside the modal to propagate (so it remains functional)
-            event.stopPropagation();
-          });
-        }
-
-        // Handle closing the modal via the close button
-        const closeButton = document.querySelector(
-          ".MemberSpaceWidgetInternal__Modal__xIsfc__closeButton"
-        );
-        if (closeButton) {
-          closeButton.addEventListener("click", function () {
-            // Close modal logic goes here, if needed
-            modal.style.display = "none"; // Or trigger any modal close action
-          });
-        }
-      });
     </script>
   </head>
   <body>

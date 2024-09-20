@@ -6,7 +6,10 @@
     <title>Trivia Game Login</title>
     <!-- MemberSpace script -->
     <script>
-      var MemberSpace = window.MemberSpace || { subdomain: "github10" };
+      var MemberSpace = window.MemberSpace || {
+        subdomain: "github10",
+        useOverlay: false,
+      };
       (function (d) {
         var s = d.createElement("script");
         s.src = "https://cdn.memberspace.com/scripts/widgets.js";

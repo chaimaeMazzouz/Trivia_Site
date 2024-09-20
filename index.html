@@ -8,13 +8,48 @@
     <style>
       .MemberSpaceWidgetInternal__Modal__xIsfc__modal {
         position: fixed !important;
-        margin: 0 !important;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 400px; /* Adjust width to fit the style */
+        height: auto; /* Auto height to fit content */
+        padding: 20px; /* Add padding to space out the content */
+        background-color: white; /* Ensure white background */
+        border-radius: 10px; /* Rounded corners to match the design */
+        box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1); /* Soft shadow for a modern look */
+        z-index: 9999;
       }
 
       .MemberSpaceWidgetInternal__Modal__xIsfc__innerScrollContainer {
-        position: fixed !important;
+        max-height: 80vh; /* Ensure it doesn't overflow vertically */
+        overflow-y: auto; /* Add scroll when content exceeds height */
+      }
 
-        margin: 0 !important;
+      /* Optional styling to match buttons and inputs closer to the design */
+      .MemberSpaceWidgetInternal__Button__bK5xK__root {
+        border-radius: 5px;
+        font-size: 16px;
+      }
+
+      .MemberSpaceWidgetInternal__TextInput__wxmT5__input {
+        font-size: 16px;
+        padding: 10px;
+        border-radius: 5px;
+        border: 1px solid #ddd;
+      }
+
+      .MemberSpaceWidgetInternal__Button__bK5xK__variant-primary {
+        background-color: #d40a6d; /* Adjust color to match the button */
+      }
+
+      .MemberSpaceWidgetInternal__Button__bK5xK__variant-secondary {
+        background-color: #ffffff;
+        color: black;
+        border: 1px solid #ddd;
+      }
+
+      .MemberSpaceWidgetInternal__Modal__xIsfc__navHeader {
+        display: none; /* Hides the close button if not needed */
       }
     </style>
     <script>

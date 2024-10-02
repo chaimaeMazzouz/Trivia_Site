@@ -6,6 +6,10 @@
     <title>Trivia Game Login</title>
     <!-- MemberSpace script -->
     <style>
+      .MemberSpaceWidgetInternal__Modal__xIsfc__modal
+        .MemberSpaceWidgetInternal__Modal__xIsfc__size-sm {
+        background: linear-gradient(to top, #a5ada0, #c4ac85);
+      }
       .MemberSpaceWidgetInternal__Modal__xIsfc__closeButton {
         display: none !important;
       }
@@ -103,5 +107,25 @@
   </head>
   <body>
     <div id="memberspace-login"></div>
+    <ms-css-seed-with-revert style="
+  --modal-backgroundColor: #f8f4f0;
+  --input-backgroundColor: #fffefc;
+  --input-borderColor: #d0d0d0;
+  --input-borderRadius: 8px;
+  --primaryButton-backgroundColor: #1c2e24;
+  --primaryButton-borderRadius: 25px;
+  --primaryButton-color: #ffffff;
+  --secondaryButton-backgroundColor: #1c2e24;
+  --secondaryButton-borderRadius: 25px;
+  --secondaryButton-color: #ffffff;
+  --label-fontFamily: 'Lato', sans-serif;
+  --label-fontWeight: 700;
+  --label-color: #202020;
+  --text-fontFamily: 'Lato', sans-serif;
+  --text-fontWeight: 400;
+  --text-color: #202020;
+  background: linear-gradient(180deg, #c1a476 0%, #e6c5a1 100%);
+">
+
   </body>
 </html>

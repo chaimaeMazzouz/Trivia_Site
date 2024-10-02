@@ -52,23 +52,7 @@
     </style>
     <script>
       // Ensure the script runs after the modal has been fully loaded
-      document.addEventListener("MemberSpace.ready", function () {
-        // Find the modal element
-        const modal = document.querySelector(
-          ".MemberSpaceWidgetInternal__Modal__xIsfc__modal"
-        );
 
-        if (modal) {
-          // Create an image element for the logo
-          const logo = document.createElement("img");
-          logo.src = "wildiq_logo.png"; // Replace with your logo's path
-          logo.alt = "Your Brand Logo";
-          logo.classList.add("brand-logo"); // Add a class for styling
-
-          // Insert the logo at the top of the modal
-          modal.insertBefore(logo, modal.firstChild);
-        }
-      });
       var MemberSpace = window.MemberSpace || {
         subdomain: "github10",
       };
@@ -84,6 +68,21 @@
       } else {
         document.addEventListener("MemberSpace.ready", function () {
           initialise();
+          // Find the modal element
+          const modal = document.querySelector(
+            ".MemberSpaceWidgetInternal__Modal__xIsfc__modal"
+          );
+
+          if (modal) {
+            // Create an image element for the logo
+            const logo = document.createElement("img");
+            logo.src = "wildiq_logo.png"; // Replace with your logo's path
+            logo.alt = "Your Brand Logo";
+            logo.classList.add("brand-logo"); // Add a class for styling
+
+            // Insert the logo at the top of the modal
+            modal.insertBefore(logo, modal.firstChild);
+          }
         });
       }
 

@@ -6,6 +6,13 @@
     <title>Trivia Game Login</title>
     <!-- MemberSpace script -->
     <style>
+      .brand-logo {
+        display: block;
+        margin: 0 auto;
+        width: 150px; /* Adjust the width to fit your design */
+        height: auto; /* Maintain aspect ratio */
+        padding-bottom: 20px; /* Add some space below the logo */
+      }
       .MemberSpaceWidgetInternal__Modal__xIsfc__closeButton {
         display: none !important;
       }
@@ -36,6 +43,11 @@
         margin: 0 !important; /* Remove any default margins */
         padding: 0 !important; /* Remove any padding */
         box-shadow: none !important; /* Remove shadow if necessary */
+      }
+      @media (max-width: 600px) {
+        .brand-logo {
+          width: 100px;
+        }
       }
     </style>
     <script>
@@ -101,6 +113,9 @@
     </script>
   </head>
   <body>
-    <div id="memberspace-login"></div>
+    <div id="memberspace-login">
+      <!-- Add the brand logo here -->
+      <img src="wildiq_logo.png" alt="Your Brand Logo" class="brand-logo" />
+    </div>
   </body>
 </html>
